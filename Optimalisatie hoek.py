@@ -7,18 +7,18 @@ import math
 # -----------------------------
 # 1. Parameters (SI-eenheden)
 # -----------------------------
-rho = 7800
-d = 0
-D = 16.28
-l = 20
-mu = 1.7
+rho = 7800 #massadichtheid staal
+d = 0 #Binnendiameter van het projectiel
+D = 16.28 #Buitendiameter van het projectiel
+l = 20 #lengte van het projectiel
+mu = 1.7 #inschatting
 m = rho*(((D/1000)**2-(d/1000)**2)*math.pi/4*l/1000)
-L_sp = 90
-L_ex = 20
-end = (L_sp + L_ex - l)/1000
+L_sp = 90 # Lengte van de spoel
+L_ex = 20 #Lengte van de loop na de spoel
+end = (L_sp + L_ex - l)/1000 #Positie wanneer de simulatie moet eindigen
 
 A = ((D/1000)**2-(d/1000)**2)*math.pi/4
-C = 0.9
+C_aero = 0.9
 h = 1
 
 N=300
@@ -81,7 +81,7 @@ for hoek in hoeken:
         else:
             F_coil = interpolator(abs(stromen[k]), posities[k-1] * 1000)
 
-        F_air = 0.5 * 1.29 * A * C * snelheden[k] ** 2
+        F_air = 0.5 * 1.29 * A * C_aero * snelheden[k] ** 2
         F_netto = F_coil - F_n - F_g - F_air
 
         if F_netto < 0 and snelheden[k-1] == 0:

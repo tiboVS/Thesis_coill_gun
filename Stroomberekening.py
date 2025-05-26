@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp, cumtrapz
 
 N=300
-n=N/300
+
 # Parameters van de kring
 R = 0.68319        # ohm
 #L = 0.001623275389530026 
@@ -17,7 +17,7 @@ def rlc_discharge(t, x):
     return [di_dt, d2i_dt2]
 
 # Beginwaarden
-V0 = 62  # Beginspanning over condensator in Volt
+V0 = 60  # Beginspanning over condensator in Volt
 i0 = 0   # Beginstroom
 di_dt0 = V0 / L  # di/dt(0) = V0 / L
 

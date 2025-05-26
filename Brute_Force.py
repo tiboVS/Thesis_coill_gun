@@ -5,12 +5,12 @@ dx = 0.1  # delta in mm
 I_range = range(1, 81, 1)  # stroomsterkte iteratie
 
 # Vasteleggen parameters projectiel en spoel
-Lprojectiel = 18.7  
-dProjectiel = 14.1 
-DProjectiel = 16.28
+Lprojectiel = 20  
+dProjectiel = 14 
+DProjectiel = 16
 StartPos = 0  
 
-R=900
+R=600
 
 Lspoel = 90          #90         110     105   
 dSpoel = 20           #20         20      16
